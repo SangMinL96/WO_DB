@@ -1,12 +1,11 @@
-import "../styles/GlobalStyles.ts";
-import React from "react";
-import "react-confirm-alert/src/react-confirm-alert.css";
-import { ThemeProvider } from "styled-components";
-import { SWRConfig } from "swr";
-import theme from "@styles/theme";
-import { AppProps } from "next/app";
-import Layout from "container/Layout";
-import GlobalStyles from "@styles/GlobalStyles";
+import React from 'react';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { ThemeProvider } from 'styled-components';
+import { SWRConfig } from 'swr';
+import theme from '@styles/theme';
+import { AppProps } from 'next/app';
+import Layout from 'container/Layout';
+import GlobalStyles from '@styles/GlobalStyles';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -29,5 +28,4 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 export default MyApp;
 
-if (process.env.NODE_ENV === "production")
-  console.log = function no_console() {};
+if (process.env.NODE_ENV === 'production') console.log = function no_console() {};

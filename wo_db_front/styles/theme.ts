@@ -6,7 +6,7 @@ const colors = {
   lightBlack: '#707070',
   pink: '#fd4381',
   yellow: '#ffc31c',
-  lightBlue: '#ebf2ff',
+  lightBlue: '#bcd1f8',
   mediumBlue: '#d7e3fb',
   blue: '#4866E4',
   gray: '#8c8c8c',
@@ -14,6 +14,7 @@ const colors = {
   lightGray: '#F5F5F5',
   ashgray: '#e4e2e3',
   whiteYellow: '#fafafa',
+  white: '#ffffff',
 };
 
 const breakpoints = {

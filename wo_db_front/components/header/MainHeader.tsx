@@ -2,8 +2,8 @@ import theme from '@styles/theme';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import logo from '@styles/images/logo.png';
-import TextInput from 'components/input/TextInput';
+import logo from '@public/images/logo.png';
+import TextInput from 'library/input/TextInput';
 
 function MainHeader() {
   const [value, setValue] = useState<string>('');

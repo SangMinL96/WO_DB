@@ -1,42 +1,63 @@
 import theme from '@styles/theme';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
+type PropsType = {
+  scrollDir?: string;
+};
+function MenuHeader({ scrollDir }: PropsType) {
+  const isScrollDir = useMemo(() => scrollDir, [scrollDir]);
+  const router = useRouter();
 
-function MenuHeader() {
   return (
-    <Container>
-      <LinkBox>
-        <li>
-          <a>자유글</a>
-        </li>
-        <li>
-          <a>랭킹</a>
-        </li>
-        <li>
-          <a>꿀팁</a>
-        </li>
-        <li>
-          <a>운동만남</a>
-        </li>
-        <li>
-          <a>식품</a>
-        </li>
-      </LinkBox>
-    </Container>
+    <>
+      <Container scrollUpDown={isScrollDir}>
+        <LinkBox>
+          <li>
+            <a className={router.route.includes('/') && 'active_link'}>홈</a>
+          </li>
+          <li>
+            <a>랭킹</a>
+          </li>
+          <li>
+            <a>자유게시판</a>
+          </li>
+          <li>
+            <a>익명게시판</a>
+          </li>
+          <li>
+            <a>운동영상</a>
+          </li>
+          <li>
+            <a>운동만남</a>
+          </li>
+          <li>
+            <a>식단</a>
+          </li>
+        </LinkBox>
+      </Container>
+      <BottomBox />
+    </>
   );
 }
 
 export default MenuHeader;
 
-const Container = styled.section`
+type StyledType = {
+  scrollUpDown?: string;
+};
+
+const Container = styled.section<StyledType>`
+  overflow: hidden;
   width: 1000px;
-  height: 80px;
+  height: ${props => (props.scrollUpDown === 'up' ? '90px' : '0px')};
   border-top: none;
   background-color: white;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.05) 1px 2px 3px;
   ${theme.flexCenter};
+  border: 1px solid ${theme.lightGray};
 `;
 
 const LinkBox = styled.div`
@@ -50,5 +71,15 @@ const LinkBox = styled.div`
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    padding-bottom: 7px;
   }
+  .active_link {
+    border-bottom: 3px solid ${theme.lightBlack};
+  }
+`;
+
+const BottomBox = styled.div`
+  width: 100%;
+  height: 20px;
+  background-color: ${theme.white};
 `;
