@@ -7,8 +7,11 @@ function GridCardsContainer() {
   return (
     <Container>
       <Card category='자유게시판' />
-      <Card category='자유게시판' />
-      <Card category='자유게시판' />
+      <Card category='익명게시판' />
+      <Card category='랭킹' />
+      <Card category='식단' />
+      <Card category='운동영상' />
+      <Card category='운동만남' />
     </Container>
   );
 }
@@ -16,7 +19,7 @@ function GridCardsContainer() {
 export default React.memo(GridCardsContainer);
 const Container = styled.section`
   ${theme.flexCenter};
-  width: 1280px;
+  width: ${theme.pc}px;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(3, 1fr);

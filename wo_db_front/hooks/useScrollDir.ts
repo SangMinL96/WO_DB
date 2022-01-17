@@ -4,6 +4,7 @@ export const useScrollDir = (noScroll: boolean = false) => {
   const [scrollDir, setScrollDir] = useState('up');
   const [isScrollTop, setIsScrollTop] = useState(true);
   const [isFixed, setIsFixed] = useState(false);
+
   useEffect(() => {
     if (!noScroll) {
       const threshold = 5;
@@ -43,5 +44,6 @@ export const useScrollDir = (noScroll: boolean = false) => {
       return () => window.removeEventListener('scroll', onScroll);
     }
   }, [scrollDir, noScroll]);
+
   return { scrollDir, isScrollTop, isFixed, setScrollDir };
 };

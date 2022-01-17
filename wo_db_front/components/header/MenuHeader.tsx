@@ -1,4 +1,5 @@
 import theme from '@styles/theme';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
@@ -8,17 +9,16 @@ type PropsType = {
 function MenuHeader({ scrollDir }: PropsType) {
   const isScrollDir = useMemo(() => scrollDir, [scrollDir]);
   const router = useRouter();
-
   return (
     <>
       <Container scrollUpDown={isScrollDir}>
         <LinkBox>
-          <li>
-            <a className={router.route.includes('/') && 'active_link'}>홈</a>
-          </li>
-          <li>
-            <a>랭킹</a>
-          </li>
+          <Link href={'/'} passHref>
+            <a className={router.route === '/' && 'active_link'}>홈</a>
+          </Link>
+          <Link href={'/ranking'} passHref>
+            <a className={router.route.includes('/ranking') && 'active_link'}>랭킹</a>
+          </Link>
           <li>
             <a>자유게시판</a>
           </li>
@@ -71,7 +71,7 @@ const LinkBox = styled.div`
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    padding-bottom: 7px;
+    padding: 7px 0;
   }
   .active_link {
     border-bottom: 3px solid ${theme.lightBlack};

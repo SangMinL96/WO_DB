@@ -32,9 +32,9 @@ type StyledType = {
   width: string | number;
 };
 const InputBox = styled.div<StyledType>`
-  position: relative;
   width: ${props => props.width};
   height: ${props => props.height};
+  position: relative;
   > input {
     font-size: 14px;
     color: ${theme.black};
@@ -49,7 +49,7 @@ const InputBox = styled.div<StyledType>`
 
 const DelButtonBox = styled.div`
   position: absolute;
-  right: 15px;
+  right: -45px;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;

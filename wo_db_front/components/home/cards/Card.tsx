@@ -30,7 +30,7 @@ function Card({ category }: PropsType) {
             <span>#스타</span>
             <Info>dasdfsddfsasfs</Info>
           </BottomBox>
-        </li>{' '}
+        </li>
         <li>
           <TopBox>
             <h5>ㅋㅋㅋ이건 아니지F이건 아니지F이건 아니지F이건 아니지F이건 아니지</h5>
@@ -40,7 +40,7 @@ function Card({ category }: PropsType) {
             <span>#스타</span>
             <Info>dasdfsddfsasfs</Info>
           </BottomBox>
-        </li>{' '}
+        </li>
         <li>
           <TopBox>
             <h5>ㅋㅋㅋ이건 아니지F이건 아니지F이건 아니지F이건 아니지F이건 아니지</h5>
@@ -50,7 +50,7 @@ function Card({ category }: PropsType) {
             <span>#스타</span>
             <Info>dasdfsddfsasfs</Info>
           </BottomBox>
-        </li>{' '}
+        </li>
         <li>
           <TopBox>
             <h5>ㅋㅋㅋ이건 아니지F이건 아니지F이건 아니지F이건 아니지F이건 아니지</h5>
@@ -110,6 +110,9 @@ const ListBox = styled.div`
     height: 50px;
     border-bottom: 1px solid ${theme.ashgray};
     margin-bottom: 8px;
+    &:hover {
+      transform: scale(1.012);
+    }
   }
 `;
 const TopBox = styled.div`

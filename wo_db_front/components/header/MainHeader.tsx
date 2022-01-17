@@ -17,7 +17,7 @@ function MainHeader() {
         <ImageBox>
           <Image src={logo} alt='logo' />
         </ImageBox>
-        <TextInput width={'500px'} value={value} onChange={onChange} />
+        <TextInput width={'400px'} value={value} onChange={onChange} />
         <LoginBox>
           <div>로그인</div>
           <div>회원가입</div>
@@ -34,7 +34,7 @@ const Container = styled.section`
   ${theme.boxShadow};
 `;
 const MainHeaderBox = styled.div`
-  width: 1280px;
+  width: ${theme.pc}px;
   height: 80px;
   padding: 15px 0;
   ${theme.flexCenter};

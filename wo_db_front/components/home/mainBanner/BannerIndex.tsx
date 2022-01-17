@@ -7,6 +7,8 @@ import banner2 from '@public/images/banner2.png';
 import banner3 from '@public/images/banner3.png';
 import banner4 from '@public/images/banner4.png';
 import Image from 'next/image';
+import theme from '@styles/theme';
+import BtnArrowIcon from '@styles/svg/BtnArrowIcon';
 SwiperCore.use([Navigation, Autoplay]);
 function BannerIndex() {
   const banners = [
@@ -53,24 +55,12 @@ function BannerIndex() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className='main_slider_nav'>
-        <button className='main_slider_prev type1'>{'<'}</button>
-        <span className='main_slider_pagination'>{`${crrIndex} / ${4}`}</span>
-        <button className='main_slider_next type1'>{'>'}</button>
-        {/* {desktop ? (
-          <>
-            <button className='main_slider_prev type1'>
-              <IconMainBannerArrow type='left' />
-            </button>
-            <span className='main_slider_pagination'>{`${crrIndex} / ${item_list.length}`}</span>
-            <button className='main_slider_next type1'>
-              <IconMainBannerArrow type='right' />
-            </button>
-          </>
-        ) : (
-          <span className='main_slider_pagination'>{`${crrIndex} / ${item_list.length}`}</span>
-        )} */}
-      </div>
+      <LeftBtn className='main_slider_prev type1'>
+        <BtnArrowIcon type='left' />
+      </LeftBtn>
+      <RightBtn className='main_slider_next type1'>
+        <BtnArrowIcon type='right' />
+      </RightBtn>
     </Container>
   );
 }
@@ -78,14 +68,15 @@ function BannerIndex() {
 export default BannerIndex;
 
 const Container = styled.section`
-  width: 1280px;
+  position: relative;
+  width: ${theme.pc}px;
   height: 500px;
   margin-top: 20px;
 
   .swiper-slide {
     position: relative;
     text-align: center;
-    max-width: 1280px;
+    max-width: ${theme.pc}px;
     height: 500px;
     background: #fff;
     display: flex;
@@ -98,4 +89,24 @@ const Container = styled.section`
       height: 100%;
     } */
   }
+  button {
+    ${theme.resetBtnStyle}
+    z-index: 55;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 150px;
+    background-color: rgba(2, 2, 2, 0.2);
+    &:hover {
+      background-color: rgba(2, 2, 2, 0.6);
+    }
+  }
+`;
+
+const LeftBtn = styled.button`
+  left: 0;
+`;
+const RightBtn = styled.button`
+  right: 0;
 `;
