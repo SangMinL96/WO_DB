@@ -8,6 +8,7 @@ import Layout from 'container/Layout';
 import GlobalStyles from '@styles/GlobalStyles';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  //
   return (
     <SWRConfig
       value={{
