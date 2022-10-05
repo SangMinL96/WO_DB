@@ -2,33 +2,12 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import SwiperCore, { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import banner1 from '@public/images/banner1.png';
-import banner2 from '@public/images/banner2.png';
-import banner3 from '@public/images/banner3.png';
-import banner4 from '@public/images/banner4.png';
+
 import Image from 'next/image';
 import theme from '@styles/theme';
 import BtnArrowIcon from '@styles/svg/BtnArrowIcon';
 SwiperCore.use([Navigation, Autoplay]);
 function BannerIndex() {
-  const banners = [
-    {
-      name: 'banner1',
-      img: banner1,
-    },
-    {
-      name: 'banner2',
-      img: banner2,
-    },
-    {
-      name: 'banner3',
-      img: banner3,
-    },
-    {
-      name: 'banner4',
-      img: banner4,
-    },
-  ];
   const [crrIndex, setCrrIndex] = useState(0);
   const onChangePage = (ev: any) => {
     setCrrIndex(ev.realIndex + 1);
@@ -48,13 +27,7 @@ function BannerIndex() {
           nextEl: '.main_slider_next.type1',
         }}
         onSlideChange={onChangePage}
-      >
-        {banners.map((item, index) => (
-          <SwiperSlide key={`${item.name}_${index}`}>
-            <Image layout='fill' objectFit='cover' src={item.img} alt={item.name} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      ></Swiper>
       <LeftBtn className='main_slider_prev type1'>
         <BtnArrowIcon type='left' />
       </LeftBtn>
